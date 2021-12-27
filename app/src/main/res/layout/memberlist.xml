@@ -34,12 +34,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ID"
+                android:textAlignment="center"
                 android:textSize="30dp"
                 android:textStyle="bold" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="+"
+                android:textAlignment="center"
                 android:textSize="30dp"
                 android:textStyle="bold" />
         </TableRow>
