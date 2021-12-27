@@ -12,12 +12,13 @@
         android:id="@+id/id"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="ID"
+        android:hint=" ID"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/edittext"/>
 
     <TextView
         android:id="@+id/sign_in"
@@ -47,7 +48,8 @@
         android:id="@+id/pw"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="PW"
+        android:hint=" PW"
+        android:background="@drawable/edittext"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

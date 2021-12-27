@@ -20,10 +20,7 @@ interface UserDao {
     @Query("SELECT * FROM UserSign WHERE name ='race' ")
     fun getSpecific() : Array<User>
 
-
     //memberList에서 특정 회원정보 조회
     //@Query("select * from UserSign where " ")
     //fun getSpecific() : List<User>
-
-
 }

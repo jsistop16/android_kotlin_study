@@ -19,11 +19,14 @@ class Sign_up_page : AppCompatActivity() {
             applicationContext, UserDatabase::class.java,"UserSign"
         ).allowMainThreadQueries().build()
 
-        val newUser = User(binding.signUpId.text.toString(),
-            binding.signUpPw.text.toString(),
-            binding.signUpPwcheck.text.toString(),
-            binding.signUpName.text.toString(),
-            binding.signUpGender.text.toString())
+        val id : String = binding.signUpId.text.toString()
+        val pw : String = binding.signUpPw.text.toString()
+        val pwcheck : String = binding.signUpPwcheck.text.toString()
+        val name : String = binding.signUpName.text.toString()
+        val gender : String = binding.signUpGender.text.toString()
+
+
+        val newUser = User(id, pw, pwcheck, name, gender)
 
         binding.button.setOnClickListener {
             db.userDao().insertUser(newUser)
@@ -32,7 +35,7 @@ class Sign_up_page : AppCompatActivity() {
         binding.signUp2.setOnClickListener {
             //db.userDao().deleteAll()
 
-            binding.check.setText(db.userDao().getSpecific().joinToString(",", "{", "}"))
+            binding.check.setText(db.userDao().getAll().joinToString(",", "{", "}"))
         }
 
 
