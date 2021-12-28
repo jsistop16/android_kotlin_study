@@ -63,6 +63,8 @@
                 android:text="회원정보보기"
                 android:textAlignment="center"
                 android:textSize="30dp" />
+
+            <!--id 추가될때마다 행 추가?-->
         </TableRow>
 
 
