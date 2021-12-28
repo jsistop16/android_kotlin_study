@@ -2,6 +2,7 @@ package com.example.myapplication
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.example.myapplication.databinding.SignUpPageBinding
@@ -15,27 +16,27 @@ class Sign_up_page : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+
         val db = Room.databaseBuilder(
-            applicationContext, UserDatabase::class.java,"UserSign"
+            applicationContext,
+            UserDatabase::class.java,"database"
         ).allowMainThreadQueries().build()
 
-        val id : String = binding.signUpId.text.toString()
-        val pw : String = binding.signUpPw.text.toString()
-        val pwcheck : String = binding.signUpPwcheck.text.toString()
-        val name : String = binding.signUpName.text.toString()
-        val gender : String = binding.signUpGender.text.toString()
-
-
-        val newUser = User(id, pw, pwcheck, name, gender)
-
         binding.button.setOnClickListener {
-            db.userDao().insertUser(newUser)
+            db.userDao().deleteAll()
         }
 
-        binding.signUp2.setOnClickListener {
-            //db.userDao().deleteAll()
 
-            binding.check.setText(db.userDao().getAll().joinToString(",", "{", "}"))
+        binding.signUp2.setOnClickListener {
+
+            val newUser = User(binding.signUpId.text.toString(),
+                binding.signUpPw.text.toString(),
+                binding.signUpPwcheck.text.toString(),
+                binding.signUpName.text.toString(),
+                binding.signUpGender.text.toString())
+            db.userDao().insertUser(newUser)
+            binding.check.setText(db.userDao().getAll().joinToString(",","{","}"))
+            Toast.makeText(this,"회원가입 완료", Toast.LENGTH_LONG).show()
         }
 
 

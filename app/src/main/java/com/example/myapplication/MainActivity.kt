@@ -16,9 +16,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
 
-//        val db = UserDatabase.getInstance(applicationContext)
-
-
         binding.signup.setOnClickListener{
             val intent = Intent(this, Sign_up_page::class.java)
             startActivity(intent)
