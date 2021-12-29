@@ -21,7 +21,6 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".Sign_up_page"/>
         <activity android:name=".Member_list"/>
-        <activity android:name=".MemberInfo"/>
     </application>
 
 </manifest>

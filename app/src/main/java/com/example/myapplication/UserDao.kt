@@ -5,7 +5,7 @@ import androidx.room.*
 
 @Dao
 interface UserDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert
     fun insertUser(user: User)
 
     @Query("SELECT * FROM UserSign")
@@ -17,11 +17,8 @@ interface UserDao {
     @Query("DELETE FROM UserSign")
     fun deleteAll()
 
-    @Query("SELECT * FROM UserSign WHERE name ='race' ")
-    fun getSpecific() : List<User>
-
-    @Query("SELECT id FROM UserSign")
-    fun getID() : String
+    @Query("SELECT email FROM UserSign")
+    fun getEmail() : String
 
     @Query("SELECT pw FROM UserSign")
     fun getPW() : String
