@@ -5,14 +5,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Sign_up_page">
+    tools:context=".SignUpActivity">
 
     <EditText
-        android:id="@+id/sign_up_id"
+        android:id="@+id/signUpId"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="ID"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,66 +20,73 @@
         android:background="@drawable/edittext"/>
 
     <EditText
-        android:id="@+id/sign_up_pw"
+        android:id="@+id/signUpPw"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="PW"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_id"
+        app:layout_constraintTop_toBottomOf="@+id/signUpId"
         android:background="@drawable/edittext"/>
 
+    <TextView
+        android:id="@+id/pwFormat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 조건 \n1. [영문] + [숫자] + [특수문자(! @ # $ % ^ \u0026 *) 중 하나이상 사용]\n2.10자이상"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/signUpPw"
+        app:layout_constraintTop_toBottomOf="@+id/signUpPw" />
+
     <EditText
-        android:id="@+id/sign_up_pwcheck"
+        android:id="@+id/signUpPwCheck"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
         android:hint="PW check"
-        android:textSize="30dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_pw"
-        android:background="@drawable/edittext"/>
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/pwFormat"
+        app:layout_constraintTop_toBottomOf="@+id/pwFormat" />
 
     <EditText
-        android:id="@+id/sign_up_name"
+        android:id="@+id/signUpName"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Name"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_pwcheck"
+        app:layout_constraintTop_toBottomOf="@+id/signUpPwCheck"
         android:background="@drawable/edittext"/>
 
 
     <EditText
-        android:id="@+id/sign_up_gender"
+        android:id="@+id/signUpGender"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Gender"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_name"
+        app:layout_constraintTop_toBottomOf="@+id/signUpName"
         android:background="@drawable/edittext"/>
 
     <TextView
-        android:id="@+id/sign_up2"
+        android:id="@+id/signUp2"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:text="Sign up"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_gender"
+        app:layout_constraintTop_toBottomOf="@+id/signUpGender"
         android:textAlignment="center"/>
 
     <TextView
@@ -87,14 +94,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/check"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up2" />
+        app:layout_constraintTop_toBottomOf="@+id/signUp2" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="삭제"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_gender"
+        app:layout_constraintTop_toBottomOf="@+id/signUpGender"
         tools:layout_editor_absoluteX="55dp" />
 
 

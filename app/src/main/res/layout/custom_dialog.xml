@@ -8,11 +8,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
-        android:id="@+id/sign_up_id3"
+        android:id="@+id/signUpIdDialog"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="152dp"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:text="ID: "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -20,70 +20,70 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/sign_up_pw3"
+        android:id="@+id/signUpPwDialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_id3"
+        app:layout_constraintTop_toBottomOf="@+id/signUpIdDialog"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:text="PW: "
         tools:layout_editor_absoluteX="73dp"
         tools:layout_editor_absoluteY="488dp" />
 
     <TextView
-        android:id="@+id/sign_up_pwcheck3"
+        android:id="@+id/signUpPwCheckDialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_pw3"
+        app:layout_constraintTop_toBottomOf="@+id/signUpPwDialog"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:text="PWcheck: "
         tools:layout_editor_absoluteX="82dp"
         tools:layout_editor_absoluteY="395dp" />
 
     <TextView
-        android:id="@+id/sign_up_name3"
+        android:id="@+id/signUpNameDialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_pwcheck3"
+        app:layout_constraintTop_toBottomOf="@+id/signUpPwCheckDialog"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:text="Name: "
         tools:layout_editor_absoluteX="73dp"
         tools:layout_editor_absoluteY="300dp" />
 
     <TextView
-        android:id="@+id/sign_up_gender3"
+        android:id="@+id/signUpGenderDialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_name3"
+        app:layout_constraintTop_toBottomOf="@+id/signUpNameDialog"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:text="Gender: "
         android:layout_marginTop="10dp"
         tools:layout_editor_absoluteX="45dp"
         tools:layout_editor_absoluteY="202dp" />
 
     <TextView
-        android:id="@+id/ok3"
+        android:id="@+id/okDialog"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
         android:text="OK"
         android:textAlignment="center"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_gender3" />
+        app:layout_constraintTop_toBottomOf="@+id/signUpGenderDialog" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

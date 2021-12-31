@@ -4,11 +4,11 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "UserSign")
+@Entity(tableName = "users")
 data class User(
     var email : String = "",
     var pw : String = "",
-    var pwcheck : String = "",
+    var pwCheck : String = "",
     var name : String = "",
     var gender : String = ""
     ){

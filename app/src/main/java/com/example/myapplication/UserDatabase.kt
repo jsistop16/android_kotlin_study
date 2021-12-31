@@ -25,6 +25,5 @@ abstract class UserDatabase : RoomDatabase() {
 //            return instance
 //        }
 //    }
-    //db생성 위치 UserDatabase클래스 or Sign_up_page클래스 ??
 
 }

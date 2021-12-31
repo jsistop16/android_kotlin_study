@@ -19,9 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"/>
-        <activity android:name=".Sign_up_page"/>
-        <activity android:name=".Member_list"/>
-        <activity android:name=".AfterLogin"/>
+        <activity android:name=".SignUpActivity"/>
+        <activity android:name=".MemberListActivity"/>
+        <activity android:name=".AfterLoginActivity"/>
     </application>
 
 </manifest>

@@ -1,18 +1,12 @@
 package com.example.myapplication
 
-import android.app.Dialog
-import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.room.Room
-import androidx.sqlite.db.SupportSQLiteOpenHelper.Configuration.builder
 import com.example.myapplication.databinding.MemberlistBinding
-import java.util.stream.DoubleStream.builder
 
-class Member_list : AppCompatActivity() {
+class MemberListActivity : AppCompatActivity() {
 
-    var member_list_db = MainActivity.db
+    var memberListDb = MainActivity.db
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,10 +14,11 @@ class Member_list : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.memberListId.setText(member_list_db.userDao().getEmail())
-        val customdialog : CustomDialog = CustomDialog(this)
+        binding.memberListId.setText(memberListDb.userDao().getEmail())
+        //다이얼로그 수정
+        val customDialog : CustomDialogActivity = CustomDialogActivity(this)
         binding.info.setOnClickListener {
-            customdialog.show()
+            customDialog.show()
         }
 
     }
