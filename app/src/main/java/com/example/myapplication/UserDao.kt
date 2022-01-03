@@ -8,11 +8,11 @@ interface UserDao {
     @Insert
     fun insertUser(user: User)
 
-    @Query("SELECT * FROM users")
-    fun getAll() : List<User>
-
     @Delete
     fun delete(user: User)
+
+    @Query("SELECT * FROM users")
+    fun getAll() : List<User>
 
     @Query("DELETE FROM users")
     fun deleteAll()

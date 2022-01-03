@@ -1,7 +1,9 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.MemberlistBinding
 
 class MemberListActivity : AppCompatActivity() {
@@ -14,12 +16,12 @@ class MemberListActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.memberListId.setText(memberListDb.userDao().getEmail())
-        //다이얼로그 수정
-        val customDialog : CustomDialogActivity = CustomDialogActivity(this)
-        binding.info.setOnClickListener {
-            customDialog.show()
-        }
+        val profileList = arrayListOf(
+            Profiles(memberListDb.userDao().getEmail(), memberListDb.userDao().getPw())
+        )
 
+        binding.recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)//어댑터의 방향 결정
+        binding.recyclerView.setHasFixedSize(true)//어뎁터의 성능 고려
+        binding.recyclerView.adapter = ProfileAdapter(profileList)//어뎁터에 리스트 넣기
     }
 }
