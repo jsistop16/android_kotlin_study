@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.room.Room
-import com.example.myapplication.databinding.SignInBinding
+import com.example.myapplication.databinding.ActivityLoginBinding
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     companion object{
         lateinit var db : UserDatabase
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        var binding : SignInBinding = SignInBinding.inflate(layoutInflater)
+        var binding : ActivityLoginBinding = ActivityLoginBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.memberList.setOnClickListener {
+            //memberList에 데이터 없을경우 앱 종료(예외처리)
             val intent = Intent(this, MemberListActivity::class.java)
             startActivity(intent)
         }
