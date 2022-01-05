@@ -37,26 +37,29 @@ class SignUpActivity : AppCompatActivity() {
             if(id.isEmpty() || pw.isEmpty() || pwCheck.isEmpty() || name.isEmpty() || !genderCheck){
                 Toast.makeText(this, "모든 정보를 입력해 주세요", Toast.LENGTH_LONG).show()
             }else{
-                //비밀번호 형식에 맞게 입력했는지
-                if(!isPasswordFormat(binding.signUpPw.text.toString())){
-                    //비밀번호 형식에 맞지 않는 경우
-                    Toast.makeText(this,"올바르지 않은 형식의 비밀번호 입니다", Toast.LENGTH_LONG).show()
-                }
-                else{ //비밀번호 일치 여부 확인
-                    if(pw != pwCheck){
-                        Toast.makeText(this, "비밀번호가 일치하지 않습니다", Toast.LENGTH_LONG).show()
-                    }else{
-                        addUser()
-                        //lookUp()//db에 추가되는지 확인용도
-                        Toast.makeText(this,"회원가입 완료", Toast.LENGTH_LONG).show()
-                        val intent = Intent(this, LoginActivity::class.java)
-                        startActivity(intent)
+                if(id in signUpPageDb.userDao().getAll().toString()){
+                    //ID중복됐을 때
+                    Toast.makeText(this, "사용할 수 없는 ID입니다", Toast.LENGTH_LONG).show()
+                }else{
+                    //비밀번호 형식에 맞게 입력했는지
+                    if(!isPasswordFormat(binding.signUpPw.text.toString())){
+                        //비밀번호 형식에 맞지 않는 경우
+                        Toast.makeText(this,"올바르지 않은 형식의 비밀번호 입니다", Toast.LENGTH_LONG).show()
                     }
-
+                    else{ //비밀번호 일치 여부 확인
+                        if(pw != pwCheck){
+                            Toast.makeText(this, "비밀번호가 일치하지 않습니다", Toast.LENGTH_LONG).show()
+                        }else{
+                            //회원가입 조건 모두 만족
+                            addUser()
+                            //lookUp()//db에 추가되는지 확인용도
+                            Toast.makeText(this,"회원가입 완료", Toast.LENGTH_LONG).show()
+                            val intent = Intent(this, LoginActivity::class.java)
+                            startActivity(intent)
+                        }
+                    }
                 }
             }
-
-
         }
     }
 
