@@ -32,8 +32,8 @@ interface UserDao {
     @Query("SELECT gender FROM users")
     fun getGender() : String
 
-    @Query("SELECT email FROM users WHERE ID= :i")
-    fun getRequestEmail(i : Int) : String
+    @Query("select pw from users where email = :email")
+    fun getPwByEmail(email : String) : String
 
 
     //memberList에서 특정 회원정보 조회

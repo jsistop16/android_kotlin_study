@@ -51,6 +51,7 @@
         android:hint=" PW"
         android:background="@drawable/edittext"
         android:textSize="30sp"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id"

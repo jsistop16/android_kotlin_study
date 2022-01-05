@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -19,9 +20,10 @@ class SignUpActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.delete.setOnClickListener {
-            deleteUser()
-        }
+//        확인용
+//        binding.delete.setOnClickListener {
+//            deleteUser()
+//        }
 
         binding.signUp2.setOnClickListener {
             //회원가입 란 모두 입력시 회원가입
@@ -45,8 +47,10 @@ class SignUpActivity : AppCompatActivity() {
                         Toast.makeText(this, "비밀번호가 일치하지 않습니다", Toast.LENGTH_LONG).show()
                     }else{
                         addUser()
-                        lookUp()//db에 추가되는지 확인용도
+                        //lookUp()//db에 추가되는지 확인용도
                         Toast.makeText(this,"회원가입 완료", Toast.LENGTH_LONG).show()
+                        val intent = Intent(this, LoginActivity::class.java)
+                        startActivity(intent)
                     }
 
                 }
@@ -80,13 +84,13 @@ class SignUpActivity : AppCompatActivity() {
 
 
     //db 데이터 확인용 메소드
-    private fun lookUp(){
-        var userInfo = signUpPageDb.userDao().getAll()
-        binding.check.setText(userInfo.joinToString(",","{","}"))
-    }
-
-    //db 데이터 삭제(확인용)
-    private fun deleteUser(){
-        signUpPageDb.userDao().deleteAll()
-    }
+//    private fun lookUp(){
+//        var userInfo = signUpPageDb.userDao().getAll()
+//        binding.check.setText(userInfo.joinToString(",","{","}"))
+//    }
+//
+//    //db 데이터 삭제(확인용)
+//    private fun deleteUser(){
+//        signUpPageDb.userDao().deleteAll()
+//    }
 }

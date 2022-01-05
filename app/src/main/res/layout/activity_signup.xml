@@ -104,6 +104,8 @@
         app:layout_constraintTop_toBottomOf="@+id/signUpGender"
         android:textAlignment="center"/>
 
+    <!--
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -117,7 +119,7 @@
         android:layout_height="wrap_content"
         android:text="삭제"
         app:layout_constraintTop_toBottomOf="@+id/signUpGender"
-        tools:layout_editor_absoluteX="55dp" />
+        tools:layout_editor_absoluteX="55dp" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

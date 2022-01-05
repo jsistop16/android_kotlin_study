@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <!--recyclerView itemView-->
+    <TextView
+        android:id="@+id/memberId"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:textSize="20sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="70dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/memberInfo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:textSize="20sp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center"/>
+
+</LinearLayout>
