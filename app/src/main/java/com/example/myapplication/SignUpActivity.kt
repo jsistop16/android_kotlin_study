@@ -8,8 +8,10 @@ import com.example.myapplication.databinding.ActivitySignupBinding
 
 class SignUpActivity : AppCompatActivity() {
 
+
     lateinit var gender : String
     var signUpPageDb = LoginActivity.db
+    var genderCheck = false //성별 체크여부
     lateinit var binding : ActivitySignupBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,16 +24,35 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         binding.signUp2.setOnClickListener {
+            //회원가입 란 모두 입력시 회원가입
+            var id = binding.signUpId.text.toString()
+            var pw = binding.signUpPw.text.toString()
+            var pwCheck = binding.signUpPwCheck.text.toString()
+            var name = binding.signUpName.text.toString()
+            if(binding.radioButtonMale.isChecked || binding.radioButtonFemale.isChecked){
+                genderCheck = true
+            }
+            if(id.isEmpty() || pw.isEmpty() || pwCheck.isEmpty() || name.isEmpty() || !genderCheck){
+                Toast.makeText(this, "모든 정보를 입력해 주세요", Toast.LENGTH_LONG).show()
+            }else{
+                //비밀번호 형식에 맞게 입력했는지
+                if(!isPasswordFormat(binding.signUpPw.text.toString())){
+                    //비밀번호 형식에 맞지 않는 경우
+                    Toast.makeText(this,"올바르지 않은 형식의 비밀번호 입니다", Toast.LENGTH_LONG).show()
+                }
+                else{ //비밀번호 일치 여부 확인
+                    if(pw != pwCheck){
+                        Toast.makeText(this, "비밀번호가 일치하지 않습니다", Toast.LENGTH_LONG).show()
+                    }else{
+                        addUser()
+                        lookUp()//db에 추가되는지 확인용도
+                        Toast.makeText(this,"회원가입 완료", Toast.LENGTH_LONG).show()
+                    }
 
-            if(!isPasswordFormat(binding.signUpPw.text.toString())){
-                //비밀번호 형식에 맞지 않는 경우
-                Toast.makeText(this,"올바르지 않은 형식의 비밀번호 입니다", Toast.LENGTH_LONG).show()
+                }
             }
-            else{
-                addUser()
-                lookUp()
-                Toast.makeText(this,"회원가입 완료", Toast.LENGTH_LONG).show()
-            }
+
+
         }
     }
 

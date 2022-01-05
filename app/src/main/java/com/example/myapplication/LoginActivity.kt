@@ -24,6 +24,7 @@ class LoginActivity : AppCompatActivity() {
             applicationContext,
             UserDatabase::class.java,"database"
         ).allowMainThreadQueries().build()
+        //allowMainThreadQueries() <- 개발시에만 적용
 
 
         binding.signUp.setOnClickListener{
