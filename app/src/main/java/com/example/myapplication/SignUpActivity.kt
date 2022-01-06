@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import com.example.myapplication.databinding.ActivitySignupBinding
 
 class SignUpActivity : AppCompatActivity() {
@@ -25,6 +26,7 @@ class SignUpActivity : AppCompatActivity() {
 //            deleteUser()
 //        }
 
+
         binding.signUp2.setOnClickListener {
             //회원가입 란 모두 입력시 회원가입
             var id = binding.signUpId.text.toString()
@@ -37,7 +39,7 @@ class SignUpActivity : AppCompatActivity() {
             if(id.isEmpty() || pw.isEmpty() || pwCheck.isEmpty() || name.isEmpty() || !genderCheck){
                 Toast.makeText(this, "모든 정보를 입력해 주세요", Toast.LENGTH_LONG).show()
             }else{
-                if(id in signUpPageDb.userDao().getAll().toString()){
+                if(id in signUpPageDb.userDao().getEmailAll()){
                     //ID중복됐을 때
                     Toast.makeText(this, "사용할 수 없는 ID입니다", Toast.LENGTH_LONG).show()
                 }else{

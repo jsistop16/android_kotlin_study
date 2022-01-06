@@ -3,7 +3,7 @@ package com.example.myapplication
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myapplication.databinding.MemberlistBinding
+import com.example.myapplication.databinding.ActivityMemberlistBinding
 import kotlinx.android.synthetic.main.item_view.view.*
 
 class MemberListActivity : AppCompatActivity() {
@@ -12,7 +12,7 @@ class MemberListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var binding : MemberlistBinding = MemberlistBinding.inflate(layoutInflater)
+        var binding : ActivityMemberlistBinding = ActivityMemberlistBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 

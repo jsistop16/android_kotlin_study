@@ -49,21 +49,18 @@ class LoginActivity : AppCompatActivity() {
         binding.signIn.setOnClickListener {
             var putEmail = binding.id.text.toString()
             var putPw = binding.pw.text.toString()
-            if(putEmail.isNotEmpty() && putPw.isNotEmpty()){
-                if(putPw == db.userDao().getPwByEmail(putEmail)){
+            if(putEmail.isNotEmpty() && putPw.isNotEmpty()){//ID, PW 모두 입력했을때
+                if(putPw == db.userDao().getPwByEmail(putEmail)){//입력한 ID값의 PW와 입력한 PW가 일치할때
                     Toast.makeText(this,"로그인 성공", Toast.LENGTH_LONG).show()
                     val intent = Intent(this, AfterLoginActivity::class.java)
                     startActivity(intent)
                 }
-                else{
+                else{//ID와 PW가 맞지 않을 때
                     Toast.makeText(this,"가입된 계정이 없습니다", Toast.LENGTH_LONG).show()
                 }
-            }else{
+            }else{//ID or PW 입력하지 않았을 때
                 Toast.makeText(this, "아이디와 비밀번호를 입력해주세요", Toast.LENGTH_LONG).show()
             }
         }
-
-
     }
-
 }

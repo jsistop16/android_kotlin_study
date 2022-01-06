@@ -20,6 +20,9 @@ interface UserDao {
     @Query("SELECT email FROM users")
     fun getEmail() : String
 
+    @Query("SELECT email FROM users")
+    fun getEmailAll() : List<String>
+
     @Query("SELECT pw FROM users")
     fun getPw() : String
 
@@ -32,7 +35,7 @@ interface UserDao {
     @Query("SELECT gender FROM users")
     fun getGender() : String
 
-    @Query("select pw from users where email = :email")
+    @Query("SELECT pw FROM users WHERE email = :email")
     fun getPwByEmail(email : String) : String
 
 

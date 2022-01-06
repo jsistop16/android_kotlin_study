@@ -20,24 +20,26 @@
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/edittext"/>
 
+
     <EditText
         android:id="@+id/signUpPw"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/edittext"
         android:hint="PW"
         android:inputType="textPassword"
         android:textSize="30sp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUpId"
-        android:background="@drawable/edittext"/>
+        app:layout_constraintEnd_toEndOf="@+id/signUpId"
+        app:layout_constraintHorizontal_bias="0.774"
+        app:layout_constraintStart_toStartOf="@+id/signUpId"
+        app:layout_constraintTop_toBottomOf="@+id/signUpId" />
 
     <TextView
         android:id="@+id/pwFormat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="비밀번호 조건 \n1. [영문] + [숫자] + [특수문자(! @ # $ % ^ \u0026 *) 중 하나이상 사용]\n2.10자이상"
+        android:text="비밀번호 조건 \n1. [영문] + [숫자] + [특수문자(! @ # $ % ^ \u0026 *)  모두 사용]\n2. 10자이상"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@+id/signUpPw"
         app:layout_constraintTop_toBottomOf="@+id/signUpPw" />
@@ -78,14 +80,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:text="Gender"
+            android:gravity="left"
+            android:textSize="30sp"/>
+
         <RadioButton
-            android:layout_width="150dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:id="@+id/radioButtonMale"
             android:text="Male"/>
 
         <RadioButton
-            android:layout_width="150dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:id="@+id/radioButtonFemale"
             android:text="Female"/>
