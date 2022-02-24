@@ -32,3 +32,4 @@
 - Domain Layer : UI Layer 와 Data Layer간의 상호작용을 간소화 및 재사용하기 위한 레이어
   + 선택사항(의무X)
   + 복잡한 비즈니스 로직과 여러 ViewModel에서 재사용되는 비즈니스 로직의 캡슐화를 담당
+  + 
