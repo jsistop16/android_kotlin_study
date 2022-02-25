@@ -1,5 +1,7 @@
 안드로이드 코틀린 공부
-----------------------
+======================
+(공부하면서 정리 순서 무작위)
+-----------------------------
 
 ## [1] 앱 아키텍쳐
 #### 1) 모바일 앱 사용자 환경
@@ -57,6 +59,8 @@
 - 기본으로 제공되는 cancellation(취소) 지원 : 실행중인 코루틴을 통해 자동으로 cancellation 전달
 - JetPack통합 : 많은 JetPack라이브러리에 코루틴을 완전히 지원하는 extension이 포함되어있음
                구조화된 concurrency실행에 사용할 수 있는 자체 coroutine scope도 제공
+###### 비유 : coroutines are light-weight threads
+- 스레드와 비슷한 기능을 제공한다 
                
 #### 3) 사용법(구글)
 
@@ -75,3 +79,17 @@ fun main(args: Array<String>) {
 ```
 - launch부분 : 코루틴 빌더
   - launch 블럭에서부터 코루틴 생성 및 실행
+  - launch를 생성하기 위해서는 scope설정이 필요
+- scope : GlobalScope(전역스코프) -> "lifetime이 프로그램 전체"라는 뜻 
+  - GlobalScope를 luanch하면 프로그램이 끝날때까지 계속 돌아감
+- 참고 : 
+  - delay는 suspend 메소드 : 일시중지, 코루틴 스코프 혹은 다른 suspend메소드 안에서만 실행 가능
+  - sleep은 blocking 메소드
+
+
+## [3]SharedPreference
+
+#### 1) 개념 : key-value로 이루어진 딕셔너리 형태의 데이터를 저장 및 조회 할 수 있는 API
+- value부분에 json형태로 이루어진 복잡한 데이터를 저장할 수 있음
+- json형태의 데이터를 serialize 및 deserialize하기위해 Gson라이브러리가 필요 
+- 
