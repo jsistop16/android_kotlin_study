@@ -93,3 +93,9 @@ fun main(args: Array<String>) {
 - value부분에 json형태로 이루어진 복잡한 데이터를 저장할 수 있음
 - json형태의 데이터를 serialize 및 deserialize하기위해 Gson라이브러리가 필요 
 - 
+
+## [4]APK(Android Package Kit)
+
+#### 1) 개념 : Android OS에 앱을 배포하는데에 사용되는 패키지파일의 확장(window의 .exe파일과 비슷)
+- 어플리케이션의 모든 데이터가 포함됨
+- 
