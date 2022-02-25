@@ -59,3 +59,19 @@
                구조화된 concurrency실행에 사용할 수 있는 자체 coroutine scope도 제공
                
 #### 3) 사용법(구글)
+
+```
+import kotlinx.coroutines.*
+
+fun main(args: Array<String>) {
+    GlobalScope.launch {
+        delay(1000L)
+        println("World")
+    }
+
+    println("Hello")
+    Thread.sleep(2000L)
+}
+```
+- launch부분 : 코루틴 빌더
+  - launch 블럭에서부터 코루틴 생성 및 실행
