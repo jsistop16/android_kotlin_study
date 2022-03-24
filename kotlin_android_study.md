@@ -163,9 +163,22 @@ private var liveText : MutableLiveData<String> = MutableLiveData()
 - LiveData의 value의 변경을 감지하고 호출
 ```
 liveText.observe(this, Observer{
-  // it으로 넘어오는 param은 LiveData의 value
-  }
+  
+}
 ```
+
+- 버튼을 누를때마다 번호가 증가하는 코드(예제)
+```
+private var count = 0 //button을 누르면 증가할 숫자
+liveText.observe(this, Observer{
+  text_test.text = it // it이 의미하는것 : LiveData의 value
+})
+
+btn_change.setOnClickListener{
+  liveText.value = "${++count}" //liveText를 직접 변경하는게 아닌 liveText의 value값에 접근해서 작업해야함
+}
+```
+
 
 ## 코틀린 문법
 
