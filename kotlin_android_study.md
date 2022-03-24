@@ -148,6 +148,25 @@ init {
 - memory leak이 없음
 - 수명주기에 따른 데이터 관리를 개발자가 하지 않아도 됨
 
+#### 3) 사용법
+- build.gradle(Module:app)에서 종속성 추가 후 LiveData를 사용할 곳에서 LiveData정의
+```
+var pageNumber = MutableLiveData<String>()
+private var liveText : MutableLiveData<String> = MutableLiveData()
+//LiveData는 추상클래스이기 때문에 LiveData class를 상속받은 MutableLiveData를 사용해야함
+```
+
+- LiveData에 Observer달기 : 
+첫번째 매개변수인 this 는 lifeCycleOwner인 Activity를 의미(해당 액티비티)
+두번째 매개변수인 Observer Callback은 LiveData(liveText)의 value의 변경을 감지하고 호출되는 부분
+
+- LiveData의 value의 변경을 감지하고 호출
+```
+liveText.observe(this, Observer{
+  // it으로 넘어오는 param은 LiveData의 value
+  }
+```
+
 ## 코틀린 문법
 
 #### 1) ${} : 문자열 안에서 변수 바로 사용하기
