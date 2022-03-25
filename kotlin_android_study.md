@@ -190,3 +190,10 @@ Timber로 로그 찍어볼때도 쓰이는 그것
 ```
 Timber.tag("surveyList").d("${surveyList}")
 ```
+
+#### 2) apply, with, let, also, run
+
+
+
+#### 3) 세이프 콜
+-개념 : 값이 존재하지 않는 변수를 호출할때 발생하는  NullPointerException(NPE)를 해결하기 위한 문법
