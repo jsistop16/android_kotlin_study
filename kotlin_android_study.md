@@ -197,3 +197,13 @@ Timber.tag("surveyList").d("${surveyList}")
 
 #### 3) 세이프 콜
 -개념 : 값이 존재하지 않는 변수를 호출할때 발생하는  NullPointerException(NPE)를 해결하기 위한 문법
+
+
+#### 4) "lateinit" vs "by lazy"
+- 값을 나중에 초기화 해준다는 목적은 동일
+- lateinit : var 로만 선언
+- by lazy : val 로만 선언
+- 상황에 따라 쓰이는 용도가 다름
+- 초기화이후에 값이 변할수 있으면 lateinit
+- 처음 초기화 된 이후 부터 계속 read-only로만 쓰이는 변수에는 by lazy를 사용하는것이 좋음
+- 
