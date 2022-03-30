@@ -192,6 +192,8 @@ Timber.tag("surveyList").d("${surveyList}")
 ```
 
 #### 2) apply, with, let, also, run
+- 개념 : 객체를 사용할때 scope를 일시적으로 만들어서 속성이나 함수를 처리하는 용도로 사용되는 함수
+- 특징 : 코드 간편화, 가독성, 후처리 등을 하는데에 유용
 
 
 
