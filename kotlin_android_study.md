@@ -179,6 +179,10 @@ btn_change.setOnClickListener{
 }
 ```
 
+## [8] 프래그먼트 생명주기
+![image](https://user-images.githubusercontent.com/83804417/161879141-042e7fc2-4756-49c8-a06f-8fc2b73399ca.png)
+
+
 
 ## 코틀린 문법
 
