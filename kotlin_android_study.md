@@ -184,8 +184,8 @@ btn_change.setOnClickListener{
 
 #### 프래그먼트 콜백함수
 - onCreate() : Fragment만 create된 상황, 이전에 onAttach()가 먼저 호출됨, Fragment View가 생성되지 않았기때문에 View와 관련된 작업은 하지 않음
-- onCreateView() : onCreate()이후에 호출됨, onCreateView()로 인해서 정상적인 FragmentView 객체가 반환되었을때 FragmentView의 LifeCycle이 생성, 반환된 View객체는 onViewCreated()의 매개변수로 전달
-- onViewCreated() : 이 시점부터는 Fragment View의 생명주기가 초기화된 상태로 업데이트 되기때문에 View의 초기값을 설정해줄수있음
+- onCreateView() : onCreate()이후에 호출됨, onCreateView()로 인해서 정상적인 FragmentView 객체가 반환되었을때 FragmentView의 LifeCycle이 생성, 반환된 View객체는 onViewCreated()의 매개변수로 전달, Activity에서 onCreate()에 코드를 적는것과 유사
+- onViewCreated() : 이 시점부터는 Fragment View의 생명주기가 초기화된 상태로 업데이트 되기때문에 View의 초기값을 설정해줄수있음, onCreateView로부터 전달받은 View를 가지고 설계
 - onResume() : Fragment가 보이는 상태에서 모든 Animator와 Transition효과가 종료되고, 사용자와 상호작용할 수 있을때 호출됨
 - onPause() : 사용자가 Fragment를 떠나기 시작했지만 Fragment는 여전히 visible일때 호출됨, 주의할점은 Fragment와 View의 LifeCycle은 Paused가 아닌 Started가 됨
 - onStop() : 
