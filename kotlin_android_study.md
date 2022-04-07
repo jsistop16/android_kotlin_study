@@ -222,3 +222,7 @@ Timber.tag("surveyList").d("${surveyList}")
 - 상황에 따라 쓰이는 용도가 다름
 - 초기화이후에 값이 변할수 있으면 lateinit
 - 처음 초기화 된 이후 부터 계속 read-only로만 쓰이는 변수에는 by lazy를 사용하는것이 좋음
+
+#### 5) open과 abstract의 차이
+- open : 상속받을수있는 class / function
+- abstract : 상속받아야만 하는 class / function
