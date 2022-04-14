@@ -195,9 +195,20 @@ btn_change.setOnClickListener{
 ## [9] MVVM패턴
 - 각각의 역할에 맞게 코드를 나누어 관리하기위한 디자인 패턴, 유지보수 용이, 개발효율 향상
 - Model, View, ViewModel을 합친용어
-- Model : application에서 사용되는 데이터와 그 데이터를 처리하는 부분
-- View : 사용자에게 보여지는 UI부분
-- viewModel : View를 표현하기 위해 만든 View를 위한 Model / View를 나타내기 위한 데이터를 처리하는 부분
+- Model 
+  * application에서 사용되는 데이터와 그 데이터를 처리하는 부분
+  * ViewModel이 요청한 데이터를 반환
+  * Room, Realm 과 같은 DB 사용이나 Retrofit 을 통한 백엔드 API 호출 (네트워킹) 이 보편적
+  
+- View 
+  * 사용자에게 보여지는 UI부분
+  * Activity, Fragment가 view역할을 함
+  * ViewModel의 데이터를 관찰하여 UI갱신
+- viewModel 
+  * View를 표현하기 위해 만든 View를 위한 Model 
+  * View를 나타내기 위한 데이터를 처리하는 부분
+  * Model로 부터 요청한 데이터를 받음
+  * View가 요청한 데이터를 Model로 요청함
 
 #### 1) 동작순서
 - 사용자들의 action이 view를 통해 들어온다
@@ -214,6 +225,9 @@ btn_change.setOnClickListener{
 
 #### 3) 단점
 - ViewModel의 설계가 쉽지 않음
+
+## [10] AAC
+- 
 
 
 
