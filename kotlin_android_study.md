@@ -193,6 +193,7 @@ btn_change.setOnClickListener{
 - onDestroy() : 
 
 ## [9] MVVM패턴
+- Activity나 Fragment에 너무 많은 코드를 넣게 되면 점점 무거워져 다루기 힘들어지게됨을 방지
 - 각각의 역할에 맞게 코드를 나누어 관리하기위한 디자인 패턴, 유지보수 용이, 개발효율 향상
 - Model, View, ViewModel을 합친용어
 - Model 
@@ -227,7 +228,19 @@ btn_change.setOnClickListener{
 - ViewModel의 설계가 쉽지 않음
 
 ## [10] AAC
-- 
+- Android Architecture Component
+- 테스트와 유지보수가 쉬운 앱을 디자인할 수 있도록 돕는 라이브러리 모음
+- JetPack의 섹션 중 하나
+
+![image](https://blog.kakaocdn.net/dn/v1c7O/btq21oxPUUg/jM8Yd0JioonHLZdFMbeaFK/img.png)
+
+  * ViewModel 
+    + 앱의 lifeCycle을 고려하여 UI관련데이터를 저장하고 관리하는 컴포넌트, activity가 종료될때 까지 유지
+    + 생명주기의 영향을 받지않고 데이터를 유지, 보관하기 위해 사용
+  * LiveData
+    + 기본 데이터베이스가 변경되면 뷰에 알리는 데이터 객체 빌드
+    + activity, fragment의 생명주기를 알고 있는 간단한 observer
+  * LifeCycle : 앱의 수명주기 관리
 
 
 
