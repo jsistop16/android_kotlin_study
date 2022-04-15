@@ -276,3 +276,10 @@ Timber.tag("surveyList").d("${surveyList}")
 #### 5) open과 abstract의 차이
 - open : 상속받을수있는 class / function
 - abstract : 상속받아야만 하는 class / function
+
+#### 6) Serialization(직렬화)
+- 객체를 저장하거나 메모리, DB로 옮기기위해 직렬화 하는것
+- 객체를 바이트 스트림으로 바꾸는 것
+- 객체에 저장된 데이터를 Stream에 쓰기위해 연속적인 데이터로 변환하는 것
+- 목적 : 객체를 상태 그대로 저장하고 필요할때 다시 생성하여 사용하는 것
+- Serializable 인터페이스는 어떠한 멤버변수나 메소드도 가지지 않는 마커 인터페이스임, 해당 인터페이스를 구현한 클래스가 특정 기능을 한다는 것을 표시(mark)하기위해 쓰인다는 뜻
